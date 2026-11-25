@@ -9,7 +9,7 @@ serviceAccounts:
 dbSecretName: db-credentials
 
 frontend:
-  replicas: 2
+  replicas: 3
   image:
     repository: nginx
     tag: "1.25"
