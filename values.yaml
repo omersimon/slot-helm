@@ -1,0 +1,67 @@
+namespace: omer-slots
+
+serviceAccounts:
+  - frontend
+  - backend
+  - database
+  - reviewer
+
+dbSecretName: db-credentials
+
+frontend:
+  replicas: 2
+  image:
+    repository: nginx
+    tag: "1.25"
+    pullPolicy: IfNotPresent
+  port: 80
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+
+backend:
+  replicas: 2
+  image:
+    repository: slots-backend
+    tag: "v1"
+    pullPolicy: IfNotPresent
+  port: 8080
+  resources:
+    requests:
+      cpu: 20m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+  slots:
+    symbols:
+      - cherry
+      - lemon
+      - bell
+      - seven
+    startCoins: 100
+    bet: 1
+    payoutThree: 10
+    payoutTwo: 2
+
+database:
+  image:
+    repository: postgres
+    tag: "16"
+    pullPolicy: IfNotPresent
+  port: 5432
+  dbName: slots
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 256Mi
+  persistence:
+    enabled: true
+    size: 1Gi
