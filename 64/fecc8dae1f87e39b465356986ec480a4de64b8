@@ -1,0 +1,26 @@
+Chart.yaml
+  h_e0acabd5c484ba 1-5
+templates/backend.yaml
+  h_e0acabd5c484ba 1-104
+templates/database.yaml
+  h_e0acabd5c484ba 1-109
+templates/frontend.yaml
+  h_e0acabd5c484ba 1-127
+templates/rbac.yaml
+  h_e0acabd5c484ba 1-39
+values-prod.yaml
+  h_e0acabd5c484ba 1-23
+values.yaml
+  h_e0acabd5c484ba 1-67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "64fecc8dae1f87e39b465356986ec480a4de64b8",
+  "prompts": {},
+  "humans": {
+    "h_e0acabd5c484ba": {
+      "author": "omersimon <omersimon@gmail.com>"
+    }
+  }
+}
